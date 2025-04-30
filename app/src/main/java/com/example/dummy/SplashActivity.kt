@@ -1,11 +1,12 @@
-package com.example.nutriplan
+package com.example.dummy
 
+import com.example.dummy.R
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.example.nutriplan.SignInActivity // Import SignInActivity
+import com.example.dummy.SignInActivity // Import SignInActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +17,6 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this@SplashActivity, SignInActivity::class.java) // Make sure SignInActivity is imported
             startActivity(intent)
             finish()
-        }, 2000) // 2-second delay
+        }, 2000) // 2-second delay// 2-second delay
     }
 }

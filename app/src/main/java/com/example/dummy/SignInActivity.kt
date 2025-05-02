@@ -30,22 +30,26 @@ class SignInActivity : AppCompatActivity() {
         }
 
         loginButton.setOnClickListener {
-            val email = editTextUsername.text.toString()
-            val password = editTextPassword.text.toString()
+            val email = editTextUsername.text.toString().trim()
+            val password = editTextPassword.text.toString().trim()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, MainActivity::class.java)) // navigate to main screen
+                            finish()
                         } else {
-                            Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show()
+                            val message = task.exception?.message ?: "Login Failed"
+                            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
                         }
                     }
             } else {
                 Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show()
             }
         }
+
 
         cancelButton.setOnClickListener {
             finish()

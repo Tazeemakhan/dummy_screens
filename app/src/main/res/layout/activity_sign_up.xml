@@ -28,7 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email Id"
-            android:textColor="Black"
             android:padding="12dp"
             android:layout_marginTop="16dp"
             android:background="@android:drawable/edit_text" />

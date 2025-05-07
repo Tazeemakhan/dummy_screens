@@ -50,7 +50,7 @@
         android:id="@+id/nutrition_guidance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="dp"
+        android:layout_marginBottom="1dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="Expert nutrition guidance tailored to \n your health goals and preferences"

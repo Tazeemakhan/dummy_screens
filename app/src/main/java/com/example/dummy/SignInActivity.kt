@@ -18,7 +18,6 @@ class SignInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_in)
 
         val signUpText = findViewById<TextView>(R.id.tv_sign_up)
-        val cancelButton = findViewById<TextView>(R.id.tv_cancel)
         val loginButton = findViewById<Button>(R.id.btn_login)
         val editTextUsername = findViewById<EditText>(R.id.et_username)
         val editTextPassword = findViewById<EditText>(R.id.et_password)
@@ -38,7 +37,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, MainActivity::class.java)) // navigate to main screen
+                            startActivity(Intent(this, BasicInformationActivity::class.java)) // navigate to main screen
                             finish()
                         } else {
                             val message = task.exception?.message ?: "Login Failed"
@@ -50,9 +49,5 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
-
-        cancelButton.setOnClickListener {
-            finish()
-        }
     }
 }

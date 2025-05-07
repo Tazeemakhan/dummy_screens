@@ -17,7 +17,6 @@ class SignUpActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         val signInText = findViewById<TextView>(R.id.tv_sign_in_here)
-        val cancelButton = findViewById<TextView>(R.id.tv_cancel)
         val email = findViewById<EditText>(R.id.et_email)
         val password = findViewById<EditText>(R.id.et_password)
         val signUp = findViewById<Button>(R.id.btn_sign_up)
@@ -49,8 +48,5 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
-        cancelButton.setOnClickListener()  {
-            finish()
-        }
     }
 }

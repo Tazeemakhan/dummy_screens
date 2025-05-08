@@ -79,7 +79,8 @@
                 android:background="@drawable/rounded_edittext"
                 android:backgroundTint="#B8E3A4"
                 android:hint="Enter your age"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:inputType="number"/>
 
             <!-- Gender -->
             <TextView

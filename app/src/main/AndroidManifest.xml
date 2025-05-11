@@ -14,9 +14,11 @@
         android:theme="@style/Theme.Dummy"
         tools:targetApi="31">
         <activity
-            android:name=".BasicInformationActivity"
+            android:name=".Bmi_screenActivity"
             android:exported="false" />
-        <!-- Correct placement of SplashActivity -->
+        <activity
+            android:name=".BasicInformationActivity"
+            android:exported="false" /> <!-- Correct placement of SplashActivity -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"> <!-- launcher activity banani ho to exported true karo -->

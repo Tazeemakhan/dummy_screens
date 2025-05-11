@@ -27,6 +27,9 @@ class BasicInformationActivity : AppCompatActivity() {
         val etAge = findViewById<EditText>(R.id.etage)
         val etGender = findViewById<AutoCompleteTextView>(R.id.etgender)
         val etActivity = findViewById<AutoCompleteTextView>(R.id.etActivity)
+        val etHeight = findViewById<AutoCompleteTextView>(R.id.etHeight)
+        val etWeight = findViewById<AutoCompleteTextView>(R.id.etWeight)
+        val etAllergy = findViewById<AutoCompleteTextView>(R.id.etAllergy)
         val etNextButton = findViewById<Button>(R.id.etnextButton)
 
         val genders = arrayOf("Male", "Female")
@@ -36,6 +39,11 @@ class BasicInformationActivity : AppCompatActivity() {
 
         val activityOptions = arrayOf("Sedentary", "Moderate", "Very Active")
         val activityAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, activityOptions)
+        etActivity.setAdapter(activityAdapter)
+        etActivity.setOnClickListener { etActivity.showDropDown() }
+
+        val AllergyOptions = arrayOf("Milk / Dairy", "Eggs","Peanuts","Tree Nuts (almonds, cashews etc.)","Wheat/gluten","soyBean","Fish","Corn","None", "Very Active")
+        val AllergyAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, AllergyOptions)
         etActivity.setAdapter(activityAdapter)
         etActivity.setOnClickListener { etActivity.showDropDown() }
 
@@ -50,8 +58,11 @@ class BasicInformationActivity : AppCompatActivity() {
             val age = etAge.text.toString().trim()
             val gender = etGender.text.toString().trim()
             val activityLevel = etActivity.text.toString().trim()
+            val Height = etHeight.text.toString().trim()
+            val Weight = etWeight.text.toString().trim()
+            val Allergy = etAllergy.text.toString().trim()
 
-            if (name.isEmpty() || age.isEmpty() || gender.isEmpty() || activityLevel.isEmpty()) {
+            if (name.isEmpty() || age.isEmpty() || gender.isEmpty() || activityLevel.isEmpty() || Height.isEmpty() || Weight.isEmpty() || Allergy.isEmpty()) {
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -60,7 +71,10 @@ class BasicInformationActivity : AppCompatActivity() {
                 "name" to name,
                 "age" to age,
                 "gender" to gender,
-                "activityLevel" to activityLevel
+                "activityLevel" to activityLevel,
+                "Height" to Height,
+                "Weight" to Weight,
+                "Allergy" to Allergy,
             )
 
             db.collection("users")

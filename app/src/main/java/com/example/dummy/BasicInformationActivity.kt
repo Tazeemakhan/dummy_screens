@@ -5,6 +5,7 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -28,7 +29,7 @@ class BasicInformationActivity : AppCompatActivity() {
         val etGender = findViewById<AutoCompleteTextView>(R.id.etgender)
         val etActivity = findViewById<AutoCompleteTextView>(R.id.etActivity)
         val etHeight = findViewById<AutoCompleteTextView>(R.id.etHeight)
-        val etWeight = findViewById<AutoCompleteTextView>(R.id.etWeight)
+        val etWeight = findViewById<TextView>(R.id.etWeight)
         val etAllergy = findViewById<AutoCompleteTextView>(R.id.etAllergy)
         val etNextButton = findViewById<Button>(R.id.etnextButton)
 
@@ -62,7 +63,7 @@ class BasicInformationActivity : AppCompatActivity() {
             val Weight = etWeight.text.toString().trim()
             val Allergy = etAllergy.text.toString().trim()
 
-            if (name.isEmpty() || age.isEmpty() || gender.isEmpty() || activityLevel.isEmpty() || Height.isEmpty() || Weight.isEmpty() || Allergy.isEmpty()) {
+            if (name.isEmpty() || age.isEmpty() || gender.isEmpty() || activityLevel.isEmpty()  || Weight.isEmpty() ) {
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }

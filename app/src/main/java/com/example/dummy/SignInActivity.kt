@@ -37,7 +37,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, Bmi_screenActivity::class.java)) // navigate to main screen
+                            startActivity(Intent(this, HomeActivity::class.java)) // navigate to main screen
                             finish()
                         } else {
                             val message = task.exception?.message ?: "Login Failed"

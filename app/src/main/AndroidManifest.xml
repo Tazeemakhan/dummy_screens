@@ -14,7 +14,22 @@
         android:theme="@style/Theme.Dummy"
         tools:targetApi="31">
         <activity
-            android:name=".Bmi_screenActivity"
+            android:name=".CalorieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalorieCalculatorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MealActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HydrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BmiActivity"
             android:exported="false" />
         <activity
             android:name=".BasicInformationActivity"
@@ -28,9 +43,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignInActivity" />
     </application>

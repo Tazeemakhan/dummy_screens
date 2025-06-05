@@ -1,5 +1,6 @@
 package com.example.dummy
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.activity.enableEdgeToEdge
@@ -7,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Bmi_screenActivity : AppCompatActivity() {
+class BmiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,6 +25,12 @@ class Bmi_screenActivity : AppCompatActivity() {
         val bmiValue = findViewById<TextView>(R.id.bmiValue)
         val bmiMessage = findViewById<TextView>(R.id.bmiMessage)
         val calculateBtn = findViewById<Button>(R.id.calculateBtn)
+        val previousBtn = findViewById<Button>(R.id.previousBtn)
+        previousBtn.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
+
 
         calculateBtn.setOnClickListener {
             val heightFeetStr = heightInput.text.toString()
@@ -54,3 +61,4 @@ class Bmi_screenActivity : AppCompatActivity() {
         }
     }
 }
+

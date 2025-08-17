@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.dummy">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,10 +17,17 @@
         android:theme="@style/Theme.Dummy"
         tools:targetApi="31">
         <activity
+            android:name=".CustomMarkerView"
+            android:exported="false"
+            />
+        <activity
+            android:name=".ProgressActivity"
+            android:exported="false" />
+        <activity
             android:name=".CalorieActivity"
             android:exported="false" />
         <activity
-            android:name=".CalorieCalculatorActivity"
+            android:name=".CalorieActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
@@ -31,6 +41,11 @@
         <activity
             android:name=".BmiActivity"
             android:exported="false" />
+        <activity
+            android:name=".PremiumActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar.FullScreen">
+            <!-- Other activity attributes -->
+        </activity>
         <activity
             android:name=".BasicInformationActivity"
             android:exported="false" /> <!-- Correct placement of SplashActivity -->

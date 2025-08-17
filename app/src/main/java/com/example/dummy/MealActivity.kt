@@ -23,6 +23,7 @@ class MealActivity : AppCompatActivity() {
     private lateinit var spinnerAllergy: Spinner
     private lateinit var btnGenerate: Button
     private lateinit var tvResult: TextView
+    private lateinit var tvResultHeading: TextView  // ✅ Added
 
     private val apiKey = "AIzaSyCFR_F_j_MVO1a16BwNeWA2FBFblo0gDM8"
 
@@ -40,6 +41,7 @@ class MealActivity : AppCompatActivity() {
         spinnerAllergy = findViewById(R.id.spinnerAllergy)
         btnGenerate = findViewById(R.id.btnGenerate)
         tvResult = findViewById(R.id.tvResult)
+        tvResultHeading = findViewById(R.id.tvResultHeading)  // ✅ Bind heading TextView
 
         // Set up spinners
         spinnerActivity.adapter = ArrayAdapter(
@@ -100,6 +102,7 @@ class MealActivity : AppCompatActivity() {
                 )
             )
 
+            tvResultHeading.visibility = View.VISIBLE  // ✅ Show heading before loading
             tvResult.text = "⏳ Generating meal plan..."
             tvResult.visibility = View.VISIBLE
 
@@ -115,13 +118,17 @@ class MealActivity : AppCompatActivity() {
                                 ?.parts
                                 ?.firstOrNull()
                                 ?.text
+
+                            tvResultHeading.visibility = View.VISIBLE  // ✅ Make sure it's visible
                             tvResult.text = responseText ?: "❌ No response from server."
                         } else {
+                            tvResultHeading.visibility = View.VISIBLE
                             tvResult.text = "❌ Failed: ${response.code()}"
                         }
                     }
 
                     override fun onFailure(call: Call<GeminiResponse>, t: Throwable) {
+                        tvResultHeading.visibility = View.VISIBLE
                         tvResult.text = "❌ Error: ${t.message}"
                     }
                 })

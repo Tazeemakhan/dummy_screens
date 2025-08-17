@@ -10,16 +10,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Title -->
+        <!-- Cute Heading -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Meal Plan"
-            android:textSize="32sp"
+            android:text="🥗 Healthy You Plan!"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#2E7D32"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="12dp" />
 
         <!-- Description -->
         <TextView
@@ -30,6 +31,7 @@
             android:textColor="#000000"
             android:textAlignment="center"
             android:layout_marginBottom="16dp" />
+
         <!-- Name -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,19 +41,20 @@
             android:layout_marginBottom="12dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Name"
-                android:textColor="#4CAF50"
-                android:layout_marginEnd="8dp" />
+                android:textSize="16dp"
+                android:textColor="#4CAF50" />
 
             <EditText
                 android:id="@+id/etName"
-                android:layout_width="290dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:hint="Enter your name" />
         </LinearLayout>
+
         <!-- Age -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,15 +64,15 @@
             android:layout_marginBottom="12dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Age (18+)"
-                android:textColor="#4CAF50"
-                android:layout_marginEnd="8dp" />
+                android:textSize="16dp"
+                android:textColor="#4CAF50" />
 
             <EditText
                 android:id="@+id/etAge"
-                android:layout_width="260dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:hint="Enter age" />
@@ -84,15 +87,15 @@
             android:layout_marginBottom="12dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Height (in inches)"
-                android:textColor="#4CAF50"
-                android:layout_marginEnd="8dp" />
+                android:textSize="16dp"
+                android:textColor="#4CAF50" />
 
             <EditText
                 android:id="@+id/etHeight"
-                android:layout_width="230dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="Inches" />
@@ -107,15 +110,15 @@
             android:layout_marginBottom="12dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Weight (in kg)"
-                android:textColor="#4CAF50"
-                android:layout_marginEnd="8dp" />
+                android:textSize="16dp"
+                android:textColor="#4CAF50" />
 
             <EditText
                 android:id="@+id/etWeight"
-                android:layout_width="200dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="Kg" />
@@ -130,15 +133,15 @@
             android:layout_marginBottom="12dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Goal Weight (kg)"
-                android:textColor="#4CAF50"
-                android:layout_marginEnd="8dp" />
+                android:textSize="16dp"
+                android:textColor="#4CAF50" />
 
             <EditText
                 android:id="@+id/etGoalWeight"
-                android:layout_width="200dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:hint="Goal kg" />
@@ -153,15 +156,15 @@
             android:layout_marginBottom="12dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Activity Level"
-                android:textColor="#4CAF50"
-                android:layout_marginEnd="8dp" />
+                android:textSize="16dp"
+                android:textColor="#4CAF50" />
 
             <Spinner
                 android:id="@+id/spinnerActivityLevel"
-                android:layout_width="200dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -174,15 +177,15 @@
             android:layout_marginBottom="12dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Allergy"
-                android:textColor="#4CAF50"
-                android:layout_marginEnd="8dp" />
+                android:textSize="16dp"
+                android:textColor="#4CAF50" />
 
             <Spinner
                 android:id="@+id/spinnerAllergy"
-                android:layout_width="200dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -197,16 +200,29 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Result Text -->
+        <!-- Result Heading -->
+        <TextView
+            android:id="@+id/tvResultHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨ Here's your Diet Plan:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#2E7D32"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <!-- Stylish Result Box -->
         <TextView
             android:id="@+id/tvResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
+            android:background="@drawable/result_box"
+            android:padding="16dp"
+            android:textColor="#333333"
             android:textSize="16sp"
-            android:textColor="#000000"
-            android:background="#FFFFFF"
-            android:padding="12dp"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:elevation="4dp" />
+
     </LinearLayout>
 </ScrollView>
